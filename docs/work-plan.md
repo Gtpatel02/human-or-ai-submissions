@@ -1,6 +1,6 @@
 # Work plan
 
-Original allocation: six issues each. Issue #11 transferred from Gtpatel02 to rdevasia25 on November 10, 2026. Issue #14 transferred from Gtpatel02 to Jalil-g on November 10, 2026. Aim for2-3 useful commits per issue,not padded counts.
+Original allocation: six issues each. Issue #11 transferred from Gtpatel02 to rdevasia25 on November 10, 2026. Issues #14 and #17 transferred from Gtpatel02 to Jalil-g on November 10, 2026. Aim for2-3 useful commits per issue,not padded counts.
 
 |Issue|Owner|Notebook|Depends on|
 |---|---|---|---|
