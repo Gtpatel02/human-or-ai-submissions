@@ -1,6 +1,6 @@
 # Learning curve
 
-Issue #6 uses the fixed notebook 03 baseline from PR #21. That PR is still a draft. Its original run lacked private files; a fresh-kernel run on this machine succeeded with verified data. Baseline validation AUROC was 0.932728, fit time 2.75 seconds, and model reload difference was zero. The private baseline result and executed copy are retained under ignored artifacts.
+Issue #6 uses the fixed notebook 03 baseline from PR #21. That PR is merged. Its original run lacked private files; a fresh-kernel run on this machine succeeded with verified data. Baseline validation AUROC was 0.932728, fit time 2.75 seconds, and model reload difference was zero. The private baseline result and executed copy are retained under ignored artifacts.
 
 ## Method
 
@@ -26,7 +26,7 @@ The complete curve run took 7.30 seconds. Maximum prediction difference was zero
 
 ## Reproduce
 
-Use the baseline branch from PR #21, then this issue's changes. Restore verified data and audit components as described in docs/split-metrics.md.
+Use main after PRs #21 and #22 are merged. Restore verified data and audit components as described in docs/split-metrics.md.
 
 ```bash
 uv sync --locked
@@ -38,4 +38,4 @@ Notebook 06 requires the successful private baseline handoff at `artifacts/03_wo
 
 Safe records and a plot are under `results/06_learning_curve/`. Ordered subset ID hashes, validation ID hash, settings, source revision, notebook source hash, seed, versions, timings, all arms, repeat metrics, and artifact hashes are recorded. Subset membership and row predictions stay under ignored `artifacts/06_learning_curve/`. Completed arms are preserved there if a later arm fails; a safe failure record is written too.
 
-Keep this PR dependent on #21. Review both before merging; do not mark #3 completed based on this notebook alone.
+PR #21 records the successful baseline execution separately. The user waived further teammate review; merge after local validation passes.
