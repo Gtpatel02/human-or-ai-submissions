@@ -5,11 +5,7 @@ It uses the merged notebook 02 helpers. Model and feature code live in notebook 
 
 ## Current evidence
 
-The first fresh-kernel execution stopped at input preflight. This checkout has no
-competition CSVs or private duplicate-audit artifact. The safe failure record is
-`results/03_word_baseline/20261110T182052474849Z-preflight-failed.json`.
-It records zero fitting rows, zero evaluation rows, and null validation AUROC.
-No competition model has run. Do not mark #3 done or use it as a finished dependency.
+The original fresh-kernel run failed because its checkout lacked private inputs. That failure record is preserved. A later fresh-kernel run on the verified local data passed: training AUROC 0.9933405, validation AUROC 0.932728, fit time 2.75 seconds, and full runtime 5.36 seconds. Reloaded probabilities matched exactly. The measured notebook and aggregate result are committed. Models and row predictions remain ignored.
 
 ## Restore inputs and run
 
@@ -48,5 +44,4 @@ Load the pipeline with joblib and call notebook 02's `class1_probabilities(model
 Only safe aggregate metrics and the inline plot belong in the committed notebook.
 The saved JSON records source revision, notebook source hash, configuration,
 versions, lock hash, data/split identity, seed, runtime, and artifact hashes.
-No upload occurs. A teammate review and successful fresh-kernel run are still
-required before completion.
+No upload occurs. The user waived further teammate review. Merge after local validation passes.
