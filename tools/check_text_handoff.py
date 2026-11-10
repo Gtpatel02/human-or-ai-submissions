@@ -10,8 +10,11 @@ import pandas as pd
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument("name", choices=["10_expanded_text", "15_normalized_transfer"])
+parser.add_argument("name", choices=["10_expanded_text", "11_formatting_rule", "15_normalized_transfer"])
+parser.add_argument("--mode", choices=["primary", "hard"], default="primary")
 args = parser.parse_args()
+if args.mode == "hard" and args.name != "11_formatting_rule":
+    parser.error("The hard path is defined only for notebook 11")
 root = Path(__file__).resolve().parents[1]
 pointer = json.loads((root / "artifacts" / args.name / "latest.json").read_text())
 split = json.loads((root / "configs/split.json").read_text())
@@ -26,7 +29,9 @@ for path, expected in pointer["artifacts"].items():
     assert digest(root / path) == expected, "Artifact changed"
 truth = pd.read_csv(root / "data/raw/train.csv", dtype={"id": "string"}).set_index("id")
 validation = truth.loc[split["validation_ids"]]
-saved = pd.read_csv(root / pointer["validation_predictions"], dtype={"id": "string"}, float_precision="round_trip")
+prediction_key = "hard_validation_predictions" if args.mode == "hard" else "validation_predictions"
+model_key = "hard_model" if args.mode == "hard" else "model"
+saved = pd.read_csv(root / pointer[prediction_key], dtype={"id": "string"}, float_precision="round_trip")
 assert saved.id.tolist() == split["validation_ids"]
 program = """
 import json, sys, cloudpickle
@@ -44,11 +49,11 @@ assert np.allclose(predictions.sum(axis=1), 1)
 json.dump(predictions[:, 1].tolist(), sys.stdout)
 """
 # Passage text travels over the child process's stdin and is never printed.
-request = {"model": str(root / pointer["model"]), "texts": validation.text.tolist()}
+request = {"model": str(root / pointer[model_key]), "texts": validation.text.tolist()}
 result = subprocess.run([sys.executable, "-c", program], input=json.dumps(request),
                         text=True, capture_output=True, check=True)
 actual = np.asarray(json.loads(result.stdout))
 difference = float(np.max(np.abs(actual - saved.p_ai.to_numpy())))
 assert difference <= 1e-12, "Clean-process probabilities differ"
-print(f"{args.name}: all {len(actual)} held-out predictions match in a clean process; maximum difference {difference:.3g}.")
+print(f"{args.name} {args.mode}: all {len(actual)} held-out predictions match in a clean process; maximum difference {difference:.3g}.")
 print("No notebook globals, fitting, or downloads were used. Private artifact hashes passed.")
