@@ -1,6 +1,6 @@
 # Work plan
 
-Original allocation: six issues each. Issue #11 transferred from Gtpatel02 to rdevasia25 on November 10, 2026. Aim for2-3 useful commits per issue,not padded counts.
+Original allocation: six issues each. Issue #11 transferred from Gtpatel02 to rdevasia25 on November 10, 2026. Issue #14 transferred from Gtpatel02 to Jalil-g on November 10, 2026. Aim for2-3 useful commits per issue,not padded counts.
 
 |Issue|Owner|Notebook|Depends on|
 |---|---|---|---|
@@ -17,7 +17,7 @@ Original allocation: six issues each. Issue #11 transferred from Gtpatel02 to rd
 |[#11](https://github.com/Jalil-g/Cornell-Text-Authorship/issues/11)|rdevasia25|11_formatting_rule.ipynb|#10|
 |[#12](https://github.com/Jalil-g/Cornell-Text-Authorship/issues/12)|Jalil-g|12_seed_stress.ipynb|#11|
 |[#13](https://github.com/Jalil-g/Cornell-Text-Authorship/issues/13)|Gtpatel02|13_rich_style.ipynb|#2,#9|
-|[#14](https://github.com/Jalil-g/Cornell-Text-Authorship/issues/14)|Gtpatel02|14_style_augmentation.ipynb|#13,#12|
+|[#14](https://github.com/Jalil-g/Cornell-Text-Authorship/issues/14)|Jalil-g|14_style_augmentation.ipynb|#13,#12|
 |[#15](https://github.com/Jalil-g/Cornell-Text-Authorship/issues/15)|rdevasia25|15_normalized_transfer.ipynb|#7,#13|
 |[#16](https://github.com/Jalil-g/Cornell-Text-Authorship/issues/16)|Jalil-g|16_local_electra.ipynb|#12,#15|
 |[#17](https://github.com/Jalil-g/Cornell-Text-Authorship/issues/17)|Gtpatel02|17_final_blend.ipynb|#11,#14,#15|
