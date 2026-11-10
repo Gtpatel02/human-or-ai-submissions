@@ -83,6 +83,11 @@ Run 1 (`20261110T231600343244Z`, commit f7b0d15, clean tree) had a placeholder
 takeaway. Runtime 309.6 s: internal fits 99.6 s, 8000 refit 91.4 s,
 confirmation 76.1 s, diagnostics 8.1 s.
 
+Run 2 (`20261110T232156602149Z`, commit ee144c6, clean tree) has the measured
+takeaway and is the main record. Runtime 297.4 s. Every metric matches run 1
+exactly. The clean-process handoff check reproduces all 2000 validation
+probabilities with maximum difference 0 and verifies all private hashes.
+
 ## Reproduce
 
 ```bash
