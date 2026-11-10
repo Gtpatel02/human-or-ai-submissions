@@ -20,7 +20,7 @@ Original allocation: six issues each. Issue #11 transferred from Gtpatel02 to rd
 |[#14](https://github.com/Jalil-g/Cornell-Text-Authorship/issues/14)|Jalil-g|14_style_augmentation.ipynb|#13,#12|
 |[#15](https://github.com/Jalil-g/Cornell-Text-Authorship/issues/15)|rdevasia25|15_normalized_transfer.ipynb|#7,#13|
 |[#16](https://github.com/Jalil-g/Cornell-Text-Authorship/issues/16)|Jalil-g|16_local_electra.ipynb|#12,#15|
-|[#17](https://github.com/Jalil-g/Cornell-Text-Authorship/issues/17)|Gtpatel02|17_final_blend.ipynb|#11,#14,#15|
+|[#17](https://github.com/Jalil-g/Cornell-Text-Authorship/issues/17)|Jalil-g|17_final_blend.ipynb|#11,#14,#15|
 |[#18](https://github.com/Jalil-g/Cornell-Text-Authorship/issues/18)|Jalil-g|18_final_checks.ipynb|#6,#7,#8,#9,#12,#16,#17|
 
 Start #1 then #2. Respect execution dependencies. Notebook16 neural-blend subsection also waits for17. Each member reviews a teammate PR.

@@ -10,7 +10,7 @@ import pandas as pd
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument("name", choices=["10_expanded_text", "11_formatting_rule", "15_normalized_transfer"])
+parser.add_argument("name", choices=["10_expanded_text", "11_formatting_rule", "15_normalized_transfer", "17_final_blend"])
 parser.add_argument("--mode", choices=["primary", "hard"], default="primary")
 args = parser.parse_args()
 if args.mode == "hard" and args.name != "11_formatting_rule":
