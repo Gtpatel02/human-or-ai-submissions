@@ -20,4 +20,4 @@ Duplicate component membership lives under ignored `artifacts/01_data_setup/<run
 
 The prefix search is checked against brute force on synthetic sets, including the .85 boundary. Failed load/audit runs save a safe failure record. Inspect failures locally; do not commit a traceback containing passages or credentials.
 
-Teammate review is required before closing #1.
+PR #19 is merged and #1 is closed. The user waived further teammate review on November 10, 2026.

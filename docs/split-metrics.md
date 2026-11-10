@@ -1,6 +1,6 @@
 # Split and metric helpers
 
-Issue #2 builds on #1 in PR #19. Both need teammate review before merge.
+Issue #2 builds on #1 in PR #19. PRs #19 and #20 are merged. The user waived further teammate review; merge future work after local validation passes.
 
 ## Reproduce
 

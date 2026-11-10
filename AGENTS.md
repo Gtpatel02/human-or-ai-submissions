@@ -10,7 +10,7 @@ Read PROJECT_CONTEXT.md, docs/notebook-contract.md, and your issue first.
 ## Workflow
 - Experiment code belongs in notebooks,including features,fitting,evaluation,and plots.
 - Shared notebook02 helpers must not train or download on import. Do not hide models in large Python modules.
-- One issue per branch:codex/issue-N-short-name. One PR per issue. Get a teammate review.
+- One issue per branch:codex/issue-N-short-name. One PR per issue. Merge after local checks pass. The user waived teammate review on November 10, 2026.
 - Aim for2-3 useful commits per issue. Never pad,backdate,spoof authors,or manufacture history.
 - Respect dependencies and notebook ownership. Keep shared files coordinated.
 - Restart and Run All before marking done. Save real metrics and failed experiments.

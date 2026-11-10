@@ -2,7 +2,7 @@
 
 Group Number22: Jalil-g,rdevasia25,Gtpatel02.
 Predict P(AI),human0,AI1. Metric:AUROC. Goal:public AUROC>=.98,with valid experiments.
-No experiments have run in this repository yet. Never report the goal as a result.
+Baseline and learning-curve experiments have run on the frozen split. Baseline validation AUROC: 0.932728. See docs/word-baseline.md and docs/learning-curve.md. The public-score target remains a goal; no Kaggle result has been measured in this repository.
 
 Data:train10000 balanced,unlabeled3000,test3000,starter2000,sample3000.
 Starter is a training subset,not extra labels. Reserve stratified8000/2000,seed42.
