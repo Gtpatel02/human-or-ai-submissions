@@ -59,6 +59,7 @@ for folder in sorted(p.name for p in (ROOT / "results").iterdir() if p.is_dir() 
     (old_path, a), (new_path, b) = old[-1], new[-1]
     diffs = list(walk(a.get("metrics"), b.get("metrics"), "metrics"))
     numeric = [v for _, k, v in diffs if k == "numeric"]
+    largest = sorted(((v, p) for p, k, v in diffs if k == "numeric"), reverse=True)[:3]
     other = [p for p, k, _ in diffs if k == "other"]
     rows.append({"notebook": folder, "status": "rerun completed", "failed_records": len(failed),
                  "committed_record": old_path.name, "rerun_record": new_path.name,
@@ -66,6 +67,7 @@ for folder in sorted(p.name for p in (ROOT / "results").iterdir() if p.is_dir() 
                  "validation_auroc_rerun": b["metrics"].get("validation_auroc"),
                  "metrics_identical": not diffs, "numeric_diffs": len(numeric),
                  "max_abs_numeric_diff": max(numeric) if numeric else 0.0,
+                 "largest_numeric_diffs": [{"path": p, "abs_diff": v} for v, p in largest],
                  "other_diffs": len(other), "other_diff_paths": other[:5],
                  "config_identical": a.get("config_sha256") == b.get("config_sha256"),
                  "data_split_identical": a["data_sha256"] == b["data_sha256"] and a["split_sha256"] == b["split_sha256"],
