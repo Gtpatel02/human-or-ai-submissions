@@ -10,6 +10,9 @@ Issue #18. Owner: Jalil-g. Depends on #6, #7, #8, #9, #12, #16, #17, all merged.
    unlabeled rows. Score = (1 - w) * classical + w * ELECTRA for w in 0, .1,
    .25, .5, .75, 1. Objective is mean AUROC over original, remove blank lines,
    collapse whitespace, wrap80. Guardrail: original >= w=0 original - .002.
+   **Update (#37):** this pick used frozen 2000. #37 redid it on inner 1600
+   training rows with 6400-fit models and got the same w = .25. See
+   `docs/internal-neural-pick.md`.
 2. **Replay.** Refit the classical arms on the same 8000 rows with the copied
    code. It must match the #17 scores before we trust the full refit.
 3. **Full refit.** Style HistGB on all 10000 in original `train.csv` order.
